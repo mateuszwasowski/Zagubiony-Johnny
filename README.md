@@ -12,6 +12,6 @@ może napotkać różne przeszkody. Musi min. znaleźć drzwi oraz klucz do nich
 
 ## Lineup
 
-Mateusz Wąsowski
-Patryk Wylegała
-Paweł Wasilczyk
+Mateusz Wąsowski,
+Patryk Wylegała,
+Paweł Wasilczyk.
