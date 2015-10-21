@@ -14,4 +14,4 @@ może napotkać różne przeszkody. Musi min. znaleźć drzwi oraz klucz do nich
 
 Mateusz Wąsowski,
 Patryk Wylegała,
-Paweł Wasilczyk.
+Paweł Wasilczyk..
