@@ -35,17 +35,17 @@ public class MenuStart extends JFrame
 		panel.setLayout(null);
 		
 		JButton NowaGra = new JButton("Nowa gra");
-		NowaGra.setEnabled(false);
 		JButton Zasady = new JButton("Zasady gry");
-		JButton Tworcy = new JButton("TwÛrcy");
-		JButton Wyjscie = new JButton("Wyjúcie");
+		JButton Tworcy = new JButton("Tw√≥rcy");
+		JButton Wyjscie = new JButton("Wyj≈õcie");
 		
 		NowaGra.addMouseListener(new MouseAdapter()
 		{
 			@Override
 			public void mouseClicked(MouseEvent e) 
 			{
-	
+				NowaGra nowaGra = new NowaGra();
+				nowaGra.setVisible(true);	
 			}
 		});
 		NowaGra.setBounds(570, 400, 140, 40);
