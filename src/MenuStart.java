@@ -21,7 +21,7 @@ public class MenuStart extends JFrame
 	{		
 		this.gra = gra;
 		
-		setIconImage(Toolkit.getDefaultToolkit().getImage("Ikonka.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("ikonka.png"));
 		setTitle("Zagubiony Johnny");
 		setSize(1280, 720);
 		setLocationRelativeTo(null);
@@ -35,20 +35,20 @@ public class MenuStart extends JFrame
 		panel.setLayout(null);
 		
 		JButton NowaGra = new JButton("Nowa gra");
-		NowaGra.setEnabled(false);
 		JButton Zasady = new JButton("Zasady gry");
-		JButton Tworcy = new JButton("TwÛrcy");
-		JButton Wyjscie = new JButton("Wyjúcie");
+		JButton Tworcy = new JButton("Tw√≥rcy");
+		JButton Wyjscie = new JButton("Wyj≈õcie");
 		
 		NowaGra.addMouseListener(new MouseAdapter()
 		{
 			@Override
 			public void mouseClicked(MouseEvent e) 
 			{
-	
+				NowaGra nowaGra = new NowaGra();
+				nowaGra.setVisible(true);	
 			}
 		});
-		NowaGra.setBounds(570, 300, 140, 40);
+		NowaGra.setBounds(570, 400, 140, 40);
 		panel.add(NowaGra);
 		
 		Zasady.addMouseListener(new MouseAdapter() 
@@ -60,7 +60,7 @@ public class MenuStart extends JFrame
 				zasadyGry.setVisible(true);
 			}
 		});
-		Zasady.setBounds(570, 350, 140, 40);
+		Zasady.setBounds(570, 450, 140, 40);
 		panel.add(Zasady);
 
 		Tworcy.addMouseListener(new MouseAdapter() 
@@ -72,7 +72,7 @@ public class MenuStart extends JFrame
 				tworcy.setVisible(true);
 			}
 		});
-		Tworcy.setBounds(570, 400, 140, 40);
+		Tworcy.setBounds(570, 500, 140, 40);
 		panel.add(Tworcy);
 
 		Wyjscie.addMouseListener(new MouseAdapter() 
@@ -83,11 +83,11 @@ public class MenuStart extends JFrame
 				System.exit(0);
 			}
 		});
-		Wyjscie.setBounds(570, 450, 140, 40);
+		Wyjscie.setBounds(570, 550, 140, 40);
 		panel.add(Wyjscie);
 		
 		JLabel label1 = new JLabel("");
-		label1.setIcon(new ImageIcon("Tlo.jpg"));
+		label1.setIcon(new ImageIcon("tlo.png"));
 		label1.setBounds(0, 0, 1280, 720);
 		panel.add(label1);
 	}
