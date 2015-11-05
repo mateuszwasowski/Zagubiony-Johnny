@@ -36,7 +36,6 @@ public class MenuStart extends JFrame
 		setContentPane(panel);
 		panel.setLayout(null);
 		
-<<<<<<< HEAD
 		Icon nowaGra = new ImageIcon("nowaGra.png");
 		Icon nowaGraHover = new ImageIcon("nowaGraHover.png");
 		JButton NowaGra = new JButton(nowaGra);
@@ -51,12 +50,6 @@ public class MenuStart extends JFrame
 		panel.add(NowaGra);
 		NowaGra.setBorder(BorderFactory.createEmptyBorder());
 		NowaGra.setContentAreaFilled(false);
-=======
-		JButton NowaGra = new JButton("Nowa gra");
-		JButton Zasady = new JButton("Zasady gry");
-		JButton Tworcy = new JButton("Twórcy");
-		JButton Wyjscie = new JButton("Wyjście");
->>>>>>> 840faeccb65776d7690986df136d90fbf63172e5
 		
 		NowaGra.addMouseListener(new MouseAdapter()
 		{
@@ -73,13 +66,8 @@ public class MenuStart extends JFrame
 			@Override
 			public void mouseClicked(MouseEvent e) 
 			{
-<<<<<<< HEAD
 				setVisible(false);
 				gra.setVisible(true);
-=======
-				NowaGra nowaGra = new NowaGra();
-				nowaGra.setVisible(true);	
->>>>>>> 840faeccb65776d7690986df136d90fbf63172e5
 			}
 		});
 		
