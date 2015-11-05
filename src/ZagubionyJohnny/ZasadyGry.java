@@ -11,7 +11,7 @@ public class ZasadyGry extends JFrame
 {
 	public ZasadyGry()
 	{
-		setIconImage(Toolkit.getDefaultToolkit().getImage("Ikonka.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("ikonka.png"));
 		setTitle("Zasady gry");
 		setSize(870, 750);
 		setLocationRelativeTo(null);
@@ -21,7 +21,7 @@ public class ZasadyGry extends JFrame
 		getContentPane().setLayout(null);
 		
 		JLabel ZasadyGry = new JLabel("");
-		ZasadyGry.setIcon(new ImageIcon("Zasady.png"));
+		//ZasadyGry.setIcon(new ImageIcon("Zasady.png"));
 		ZasadyGry.setBounds(0, 0, 870, 710);
 		getContentPane().add(ZasadyGry);
 	}
