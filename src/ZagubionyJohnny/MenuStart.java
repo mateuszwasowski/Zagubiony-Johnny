@@ -66,8 +66,8 @@ public class MenuStart extends JFrame
 			@Override
 			public void mouseClicked(MouseEvent e) 
 			{
-				setVisible(false);
-				gra.setVisible(true);
+				dispose();
+				gra.show();
 			}
 		});
 		

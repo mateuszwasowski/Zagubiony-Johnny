@@ -2,16 +2,15 @@ package ZagubionyJohnny;
 
 import java.awt.Color;
 import java.awt.Toolkit;
-import java.io.File;
+import java.awt.Font;
 
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class ZagubionyJohnny extends JFrame
-{
+{	
 	public ZagubionyJohnny() 
 	{
 		setIconImage(Toolkit.getDefaultToolkit().getImage("ikonka.png"));
@@ -23,32 +22,27 @@ public class ZagubionyJohnny extends JFrame
 		getContentPane().setBackground(Color.BLACK);
 		getContentPane().setLayout(null);
 		
-		JLabel ZagubionyJohnny = new JLabel("");
-		//ZagubionyJohnny.setIcon(new ImageIcon("Zasady.png"));
-		ZagubionyJohnny.setBounds(0, 0, 800, 800);
-		getContentPane().add(ZagubionyJohnny);
-	}
-	
-	public static void otworzDzwiek()
-	{
-		try
-		{
-			File plik = new File("song.wav");
-			Clip clip = AudioSystem.getClip();
-			clip.open(AudioSystem.getAudioInputStream(plik));
-			clip.start();
-			Thread.sleep(clip.getMicrosecondLength());
-		} catch (Exception e)
-		{
-			System.err.println(e.getMessage());
-		}
+		JLabel korytarz = new JLabel();
+		korytarz.setIcon(new ImageIcon("hallwayfilter.png"));
+		korytarz.setBounds(0, 0, 500, 500);
+		getContentPane().add(korytarz);
+		
+		JTextArea konsola = new JTextArea();
+		konsola.setForeground(Color.GREEN);
+		konsola.setFont(new Font("Monospaced", Font.PLAIN, 30));
+		konsola.setBackground(Color.BLACK);
+		konsola.setBounds(10, 510, 780, 300);
+		konsola.setLineWrap(true);
+		getContentPane().add(konsola);
 	}
 
 	public static void main(String[] args) 
 	{	
 		ZagubionyJohnny gra = new ZagubionyJohnny();
 		MenuStart menu = new MenuStart(gra);
-		menu.setVisible(true);
-		otworzDzwiek();
+		Dzwiek dzwiek = new Dzwiek();
+		
+		menu.show();
+		dzwiek.otworzDzwiek();
 	}
 }
