@@ -12,9 +12,9 @@ import javax.swing.JPanel;
 
 public class ZagubionyJohnny extends JFrame
 {
-       private static final int fieldWidth=5;
-       private static final int fieldHeight=5;
-       private final Room[][] fieldButtons;
+        private static final int fieldWidth=5;
+        private static final int fieldHeight=5;
+        private final Room[][] fieldButtons;
         
 	public ZagubionyJohnny() 
 	{
@@ -40,20 +40,20 @@ public class ZagubionyJohnny extends JFrame
 		konsola.setLineWrap(true);
 		getContentPane().add(konsola);
 		
-               JPanel field = new JPanel();
-               field.setBounds(525, 10, fieldWidth*50, fieldHeight*50);
-               field.setLayout(new GridLayout(fieldHeight, fieldWidth, 0, 0));
-               fieldButtons=new Room[fieldWidth][fieldHeight];
-               for (int j=0; j<fieldHeight; j++)
-               {    
-                   for (int i=0; i<fieldWidth; i++)
-                   {
-                       fieldButtons[i][j] = new Room(i,j);
-                       fieldButtons[i][j].setBackground(Color.gray);
-                       field.add(fieldButtons[i][j]);
-                   }
-               }
-               getContentPane().add(field);
+                JPanel field = new JPanel();
+                field.setBounds(525, 10, fieldWidth*50, fieldHeight*50);
+                field.setLayout(new GridLayout(fieldHeight, fieldWidth, 0, 0));
+                fieldButtons=new Room[fieldWidth][fieldHeight];
+                for (int j=0; j<fieldHeight; j++)
+                {    
+                    for (int i=0; i<fieldWidth; i++)
+                    {
+                        fieldButtons[i][j] = new Room(i,j);
+                        fieldButtons[i][j].setBackground(Color.gray);
+                        field.add(fieldButtons[i][j]);
+                    }
+                }
+                getContentPane().add(field);
 	}
 
 	public static void main(String[] args) 
