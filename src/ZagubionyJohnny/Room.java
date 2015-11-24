@@ -1,3 +1,5 @@
+package ZagubionyJohnny;
+
 import javax.swing.JButton;
 
 public class Room extends JButton
