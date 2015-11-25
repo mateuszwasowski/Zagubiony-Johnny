@@ -39,11 +39,14 @@ public class MenuStart extends JFrame
 		Icon nowaGra = new ImageIcon("nowaGra.png");
 		Icon nowaGraHover = new ImageIcon("nowaGraHover.png");
 		JButton NowaGra = new JButton(nowaGra);
-		Icon zasady = new ImageIcon("nowaGra.png");
+		Icon zasady = new ImageIcon("zasady.png");
+		Icon zasadyHover = new ImageIcon("zasadyHover.png"); 
 		JButton Zasady = new JButton(zasady);
-		Icon tworcy = new ImageIcon("nowaGra.png");
+		Icon tworcy = new ImageIcon("tworcy.png");
+		Icon tworcyHover = new ImageIcon("tworcyHover.png");
 		JButton Tworcy = new JButton(tworcy);
-		Icon wyjscie = new ImageIcon("nowaGra.png");
+		Icon wyjscie = new ImageIcon("wyjscie.png");
+		Icon wyjscieHover = new ImageIcon("wyjscieHover.png");
 		JButton Wyjscie = new JButton(wyjscie);
 		
 		NowaGra.setBounds(275, 415, 250, 50);
@@ -80,12 +83,12 @@ public class MenuStart extends JFrame
 		{
 			public void mouseEntered(MouseEvent e)
 			{
-				Zasady.setRolloverIcon(nowaGraHover);
+				Zasady.setRolloverIcon(zasadyHover);
 			}
 			
 			public void mouseExited(MouseEvent e)
 			{
-				Zasady.setRolloverIcon(nowaGra);
+				Zasady.setRolloverIcon(zasady);
 			}
 			
 			@Override
@@ -105,12 +108,12 @@ public class MenuStart extends JFrame
 		{
 			public void mouseEntered(MouseEvent e)
 			{
-				Tworcy.setRolloverIcon(nowaGraHover);
+				Tworcy.setRolloverIcon(tworcyHover);
 			}
 			
 			public void mouseExited(MouseEvent e)
 			{
-				Tworcy.setRolloverIcon(nowaGra);
+				Tworcy.setRolloverIcon(tworcy);
 			}
 			
 			@Override
@@ -130,12 +133,12 @@ public class MenuStart extends JFrame
 		{
 			public void mouseEntered(MouseEvent e)
 			{
-				Wyjscie.setRolloverIcon(nowaGraHover);
+				Wyjscie.setRolloverIcon(wyjscieHover);
 			}
 			
 			public void mouseExited(MouseEvent e)
 			{
-				Wyjscie.setRolloverIcon(nowaGra);
+				Wyjscie.setRolloverIcon(wyjscie);
 			}
 			
 			@Override
