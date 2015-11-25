@@ -7,12 +7,14 @@ import javax.sound.sampled.Clip;
 
 public class Dzwiek
 {
+	static File plik = new File("song.wav");
+	static Clip clip;
+	
 	public static void otworzDzwiek()
 	{
 		try
 		{
-			File plik = new File("song.wav");
-			Clip clip = AudioSystem.getClip();
+			clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(plik));
 			clip.start();
 		} catch (Exception e)

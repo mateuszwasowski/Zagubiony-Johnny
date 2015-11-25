@@ -18,6 +18,7 @@ public class MenuStart extends JFrame
 {
 	private JPanel panel;
 	private ZagubionyJohnny gra;
+	private Dzwiek dzwiek;
 
 	public MenuStart(ZagubionyJohnny gra) 
 	{		
@@ -152,5 +153,7 @@ public class MenuStart extends JFrame
 		label1.setIcon(new ImageIcon("tlo.png"));
 		label1.setBounds(0, -50, 800, 800);
 		panel.add(label1);
+		
+		dzwiek.otworzDzwiek();
 	}
 }

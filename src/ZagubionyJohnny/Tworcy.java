@@ -19,8 +19,8 @@ public class Tworcy extends JFrame
 		getContentPane().setBackground(Color.BLACK);
 		getContentPane().setLayout(null);
 			
-		JLabel ZasadyGry = new JLabel("");
-		ZasadyGry.setBounds(0, 0, 870, 710);
-		getContentPane().add(ZasadyGry);
+		JLabel Tworcy = new JLabel("");
+		Tworcy.setBounds(0, 0, 870, 710);
+		getContentPane().add(Tworcy);
 	}
 }
