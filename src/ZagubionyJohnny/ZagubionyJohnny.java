@@ -6,7 +6,6 @@ import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Font;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,7 +14,7 @@ import javax.swing.JTextArea;
 
 public class ZagubionyJohnny extends JFrame
 {	
-	private static final int fieldWidth = 5;
+    private static final int fieldWidth = 5;
     private static final int fieldHeight = 5;
     private final Room[][] fieldButtons;
     
@@ -60,18 +59,18 @@ public class ZagubionyJohnny extends JFrame
 		pole = new JPanel();
 		pole.setBounds(525, 10, fieldWidth * 50, fieldHeight * 50);
 		pole.setLayout(new GridLayout(fieldHeight, fieldWidth, 0, 0));
-        fieldButtons = new Room[fieldWidth][fieldHeight];
+        	fieldButtons = new Room[fieldWidth][fieldHeight];
         
-        for (int j = 0; j < fieldHeight; j++)
-        {    
-            for (int i = 0; i < fieldWidth; i++)
-            {
-                fieldButtons[i][j] = new Room(i, j);
-                fieldButtons[i][j].setBackground(Color.gray);
-                pole.add(fieldButtons[i][j]);
-            }
-        }
-        getContentPane().add(pole);
+	        for (int j = 0; j < fieldHeight; j++)
+	        {    
+	            for (int i = 0; i < fieldWidth; i++)
+	            {
+	                fieldButtons[i][j] = new Room(i, j);
+	                fieldButtons[i][j].setBackground(Color.gray);
+	                pole.add(fieldButtons[i][j]);
+	            }
+	        }
+	        getContentPane().add(pole);
 		
 		konsola = new JTextArea(komendy);
 		konsola.setFont(new Font("Monospaced", Font.BOLD, 25));
@@ -80,19 +79,30 @@ public class ZagubionyJohnny extends JFrame
 		konsola.setBounds(10, 530, 780, 150);
 		konsola.setLineWrap(true);
 		
-		konsola.addKeyListener(new KeyAdapter()
-		{
-			public void keyPressed(KeyEvent e)
-			{
-				if (e.getKeyCode() == KeyEvent.VK_ENTER)
-				{
-					komendy = konsola.getText();
-					System.out.println(komendy);
-					konsola.setText(null);
-				}
-			}
-		});
-		
+	        konsola.addKeyListener(new KeyAdapter()
+	        {
+	            public void keyPressed(KeyEvent e)
+	            {
+	                if (e.getKeyCode() == KeyEvent.VK_ENTER)
+	                {
+	                    komendy = konsola.getText();
+	                    Pattern r = Pattern.compile("wyj\\w+", Pattern.CASE_INSENSITIVE);
+	                    Matcher m = r.matcher(komendy);
+	                    if(m.find())
+	                    {
+	                        ZagubionyJohnny gra = new ZagubionyJohnny();
+	                        MenuStart menu = new MenuStart(gra);
+	                        menu.show();
+	                        setVisible(false);
+	                        dispose();
+	                        clip.stop();
+	                    }
+	                    System.out.println(komendy);
+	                    konsola.setText(null);
+	                }
+	            }
+	        });
+	        
 		getContentPane().add(konsola);
 	}
 
@@ -100,7 +110,6 @@ public class ZagubionyJohnny extends JFrame
 	{	
 		ZagubionyJohnny gra = new ZagubionyJohnny();
 		MenuStart menu = new MenuStart(gra);
-		
 		menu.show();
 	}
 }
