@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
@@ -153,7 +152,6 @@ public class MenuStart extends JFrame
 		label1.setIcon(new ImageIcon("tlo.png"));
 		label1.setBounds(0, -50, 800, 800);
 		panel.add(label1);
-		
-		dzwiek.otworzDzwiek();
+		dzwiek.odtworzDzwiek();
 	}
 }
