@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import static ZagubionyJohnny.Dzwiek.clip;
 
 public class ZagubionyJohnny extends JFrame
 {	
