@@ -19,7 +19,7 @@ public class ZagubionyJohnny extends JFrame
 {	
     private static final int fieldWidth = 5;
     private static final int fieldHeight = 5;
-    private final Room[][] fieldButtons;
+    //private final Room[][] fieldButtons;
     
     JLabel korytarz;
     JLabel johnny;
@@ -49,17 +49,17 @@ public class ZagubionyJohnny extends JFrame
 		getContentPane().add(johnny);
 		getContentPane().add(korytarz);
 		
-		/*JLabel mapa = new JLabel();
+		JLabel mapa = new JLabel();
 		mapa.setIcon(new ImageIcon("mapa.png"));
 		mapa.setBounds(497, 0, 300, 300);
-		getContentPane().add(mapa);*/
+		getContentPane().add(mapa);
 		
 		ekwipunek = new JLabel();
 		ekwipunek.setIcon(new ImageIcon("ekwipunek.png"));
 		ekwipunek.setBounds(497, 305, 300, 200);
 		getContentPane().add(ekwipunek);
 		
-		pole = new JPanel();
+		/*pole = new JPanel();
 		pole.setBounds(525, 10, fieldWidth * 50, fieldHeight * 50);
 		pole.setLayout(new GridLayout(fieldHeight, fieldWidth, 0, 0));
         	fieldButtons = new Room[fieldWidth][fieldHeight];
@@ -73,7 +73,7 @@ public class ZagubionyJohnny extends JFrame
 	                pole.add(fieldButtons[i][j]);
 	            }
 	        }
-	        getContentPane().add(pole);
+	        getContentPane().add(pole);*/
 		
 		konsola = new JTextArea(komendy);
 		konsola.setFont(new Font("Monospaced", Font.BOLD, 25));
@@ -86,22 +86,41 @@ public class ZagubionyJohnny extends JFrame
 	        {
 	            public void keyPressed(KeyEvent e)
 	            {
+	            	Komenda x = new Komenda(konsola);
+	            	
 	                if (e.getKeyCode() == KeyEvent.VK_ENTER)
 	                {
-	                    komendy = konsola.getText();
-	                    Pattern r = Pattern.compile("wyj\\w+", Pattern.CASE_INSENSITIVE);
-	                    Matcher m = r.matcher(komendy);
-	                    if(m.find())
-	                    {
-	                        ZagubionyJohnny gra = new ZagubionyJohnny();
+	                    komendy = x.get();
+	                    //DEBUG WYJSCIA PO ENTERZE
+	            		System.out.println("Wyjscie: "+komendy);
+	            		
+	            		int a = x.check();
+	            		System.out.println(a);
+	            		System.out.println(x.getLast());
+	            		if (a == 1) {
+	            			ZagubionyJohnny gra = new ZagubionyJohnny();
 	                        MenuStart menu = new MenuStart(gra);
 	                        menu.show();
 	                        setVisible(false);
 	                        dispose();
 	                        clip.stop();
-	                    }
-	                    System.out.println(komendy);
-	                    konsola.setText(null);
+	            		}
+	            		else if(a == 2){
+	            			korytarz.setIcon(new ImageIcon("3.png"));
+	            			johnny.setIcon(new ImageIcon("johnny3.png"));
+	            		}
+	            		else if (a == 0){
+	            			
+	            			
+	            		}
+	            		
+	                    /*Pattern r = Pattern.compile("wyj\\w+", Pattern.CASE_INSENSITIVE);
+	                    Matcher m = r.matcher(komendy);
+	                    if(m.find())
+	                    {
+	                        
+	                    }*/
+	                    
 	                }
 	            }
 	        });
