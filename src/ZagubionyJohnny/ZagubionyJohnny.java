@@ -256,7 +256,6 @@ public class ZagubionyJohnny extends JFrame
                             buttonjohnny.setBounds(m, n = n - 50, 50, 50);
                             johnny.setIcon(new ImageIcon("Johnny/johnnybackhall.png"));
                             turn = "north";
-                            konsola2.setText("Gowno");
                         }
 	            	}
                     else if (a == g2) //sciana tylna (ta niewidoczna)
