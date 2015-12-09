@@ -1,49 +1,71 @@
 package ZagubionyJohnny;
 
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
-public class Komenda {
-	
-	private JTextArea kons;
+public class Komenda
+{
+	private JTextField kons;
 	private String last;
 	
-	public Komenda(JTextArea k)
+	public Komenda(JTextField k)
 	{
 		kons = k;
 	}
 	
-	public String getText (){
+	public String getText()
+	{
 		return kons.getText();
 	}
 
-	
-	public String get(){
-		String s =kons.getText();
+	public String get()
+	{
+		String s = kons.getText();
 		kons.setText(null);
 		s = s.toLowerCase();
 		s = RemoveAccent(s);
 		s.replace("\n", "");
 		last = s;
 		return s;
-		
 	}
-	public int check(){
-		if  (last.equals("\nwyjscie") == true){
+	
+	public int check()
+	{
+		if  (last.equals("wyjscie") == true)
+		{
 			return 1;
 		}
-		else if (last.equals("\nidz do przodu") == true){
+		else if (last.equals("idz do przodu") == true)
+		{
 			return 2;
 		}
-		else{
-		return 0;
+        else if (last.equals("idz do tylu") == true)
+        {
+			return 3;
+		}
+        else if (last.equals("idz w lewo") == true)
+        {
+			return 4;
+		}
+        else if (last.equals("idz w prawo") == true)
+        {
+			return 5;
+		}
+        else if (last.equals("pomoc") == true)
+        {
+        	return 6;
+        }
+		else
+		{
+			return 0;
 		}
 	}
-	public String getLast(){
+	
+	public String getLast()
+	{
 		return last;
 	}
 	
 	public String RemoveAccent(String s)
-
 	{
 
 	return s.replace('π', 'a')
@@ -60,9 +82,9 @@ public class Komenda {
 	
 	  .replace('ú', 's')
 	
-	  .replace('ø', 'z')
-	
 	  .replace('ü', 'z')
+	
+	  .replace('ø', 'z')
 	
 	  .replace('•', 'A')
 	
@@ -78,10 +100,8 @@ public class Komenda {
 	
 	  .replace('å', 'S')
 	
-	  .replace('Ø', 'Z')
+	  .replace('è', 'Z')
 	
-	  .replace('è', 'Z');
-		
-
+	  .replace('Ø', 'Z');
 	}
 }

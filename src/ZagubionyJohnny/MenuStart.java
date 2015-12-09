@@ -8,10 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import static ZagubionyJohnny.Dzwiek.clip;
 
 public class MenuStart extends JFrame
 {
@@ -36,17 +39,17 @@ public class MenuStart extends JFrame
 		setContentPane(panel);
 		panel.setLayout(null);
 		
-		Icon nowaGra = new ImageIcon("nowaGra.png");
-		Icon nowaGraHover = new ImageIcon("nowaGraHover.png");
+		Icon nowaGra = new ImageIcon("Buttony/nowaGra.png");
+		Icon nowaGraHover = new ImageIcon("Buttony/nowaGraHover.png");
 		JButton NowaGra = new JButton(nowaGra);
-		Icon zasady = new ImageIcon("zasady.png");
-		Icon zasadyHover = new ImageIcon("zasadyHover.png"); 
+		Icon zasady = new ImageIcon("Buttony/zasady.png");
+		Icon zasadyHover = new ImageIcon("Buttony/zasadyHover.png"); 
 		JButton Zasady = new JButton(zasady);
-		Icon tworcy = new ImageIcon("tworcy.png");
-		Icon tworcyHover = new ImageIcon("tworcyHover.png");
+		Icon tworcy = new ImageIcon("Buttony/tworcy.png");
+		Icon tworcyHover = new ImageIcon("Buttony/tworcyHover.png");
 		JButton Tworcy = new JButton(tworcy);
-		Icon wyjscie = new ImageIcon("wyjscie.png");
-		Icon wyjscieHover = new ImageIcon("wyjscieHover.png");
+		Icon wyjscie = new ImageIcon("Buttony/wyjscie.png");
+		Icon wyjscieHover = new ImageIcon("Buttony/wyjscieHover.png");
 		JButton Wyjscie = new JButton(wyjscie);
 		
 		NowaGra.setBounds(275, 415, 250, 50);
@@ -71,6 +74,7 @@ public class MenuStart extends JFrame
 			{
 				dispose();
 				gra.show();
+				clip.stop();
 			}
 		});
 		

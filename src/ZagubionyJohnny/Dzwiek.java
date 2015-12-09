@@ -1,6 +1,7 @@
 package ZagubionyJohnny;
 
 import java.io.File;
+
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
@@ -16,7 +17,8 @@ public class Dzwiek
                 clip = AudioSystem.getClip();
                 clip.open(AudioSystem.getAudioInputStream(plik));                   
                 clip.start();
-            } catch (Exception e)
+            } 
+            catch (Exception e)
             {
                 System.err.println(e.getMessage());
             }

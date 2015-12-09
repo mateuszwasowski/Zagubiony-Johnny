@@ -1,8 +1,8 @@
 package ZagubionyJohnny;
 
-import javax.swing.JButton;
+import javax.swing.JLabel;
 
-public class Room extends JButton
+public class Room extends JLabel
 {
 	private final int fieldX;
 	private final int fieldY;
