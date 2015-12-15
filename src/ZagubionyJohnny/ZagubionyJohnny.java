@@ -89,7 +89,6 @@ public class ZagubionyJohnny extends JFrame
 		ekwipunek = new JLabel();
 		ekwipunek.setIcon(new ImageIcon("Eq/ekwipunek.png"));
 		ekwipunek.setBounds(-3, 300, 800, 500);
-		getContentPane().add(ekwipunek);
 
 		pole = new JPanel();
 		pole.setBounds(497, 0, fieldWidth * 50, fieldHeight * 50);
@@ -254,7 +253,7 @@ public class ZagubionyJohnny extends JFrame
 				{
 					komendy = x.get();
 
-					konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iœæ dalej?");
+					konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iÂœÃ¦ dalej?");
 
 					if ("north".equals(turn))
 					{
@@ -305,7 +304,7 @@ public class ZagubionyJohnny extends JFrame
 								|| (k == 2 && l == 1) || (k == 2 && l == 2) || (k == 2 && l == 4) || (k == 3 && l == 4)
 								|| (k == 4 && l == 1) || (k == 4 && l == 2) || (k == 5 && l == 2)
 								|| (k == 5 && l == 4)) {
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÃª tam iÂœÃ¦!");
 						} 
 						
 						else
@@ -323,7 +322,7 @@ public class ZagubionyJohnny extends JFrame
 								|| (k == 1 && l == 2) || (k == 2 && l == 1) || (k == 2 && l == 3) || (k == 3 && l == 2)
 								|| (k == 3 && l == 4) || (k == 4 && l == 1) || (k == 4 && l == 4) || (k == 5 && l == 1)
 								|| (k == 5 && l == 2) || (k == 5 && l == 4)) {
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÃª tam iÂœÃ¦!");
 						} 
 						
 						else
@@ -345,7 +344,7 @@ public class ZagubionyJohnny extends JFrame
 						if (k == 0 || (k == 5 && l == 0) || (k == 1 && l == 1) || (k == 1 && l == 3)
 								|| (k == 1 && l == 5) || (k == 2 && l == 5) || (k == 3 && l == 0) || (k == 3 && l == 1)
 								|| (k == 3 && l == 2) || (k == 4 && l == 3)) {
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÃª tam iÂœÃ¦!");
 						}
 						
 						else
@@ -362,7 +361,7 @@ public class ZagubionyJohnny extends JFrame
 						if (k == 5 || (k == 1 && l == 0) || (k == 1 && l == 5) || (k == 2 && l == 1)
 								|| (k == 2 && l == 2) || (k == 2 && l == 3) || (k == 2 && l == 5) || (k == 3 && l == 0)
 								|| (k == 4 && l == 3)) {
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÃª tam iÂœÃ¦!");
 						}
 						
 						else
@@ -377,7 +376,7 @@ public class ZagubionyJohnny extends JFrame
 					else if (a == 0)
 					{
 						konsola2.setText(
-								"Drogi graczu, nie ma takiej komendy!\nWpisz pomoc, ¿eby wyœwietliæ dostêpne polecenia");
+								"Drogi graczu, nie ma takiej komendy!\nWpisz pomoc, Â¿eby wyÂœwietliÃ¦ dostÃªpne polecenia");
 					} 
 					
 					else if (a == 6)
@@ -465,6 +464,7 @@ public class ZagubionyJohnny extends JFrame
 
 		getContentPane().add(konsola);
 		getContentPane().add(konsola2);
+		getContentPane().add(ekwipunek);
 	}
 
 	public static void main(String[] args)
