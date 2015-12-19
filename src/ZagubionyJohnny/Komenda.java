@@ -6,12 +6,12 @@ public class Komenda
 {
 	private JTextField kons;
 	private String last;
-	
+
 	public Komenda(JTextField k)
 	{
 		kons = k;
 	}
-	
+
 	public String getText()
 	{
 		return kons.getText();
@@ -27,81 +27,76 @@ public class Komenda
 		last = s;
 		return s;
 	}
-	
+
 	public int check()
 	{
-		if  (last.equals("wyjscie") == true)
+		if (last.equals("wyjscie") || last.equals("wyjdz") == true)
 		{
 			return 1;
 		}
-		else if (last.equals("idz do przodu") == true)
+		
+		else if (last.equals("idz do przodu") || last.equals("idz prosto") || last.equals("idz przed siebie")
+				|| last.equals("idz naprzod") || last.equals("idz w przod") || last.equals("pojdz do przodu")
+				|| last.equals("pojdz prosto") || last.equals("pojdz przed siebie") || last.equals("pojdz naprzod")
+				|| last.equals("pojdz w przod") == true)
 		{
 			return 2;
 		}
-        else if (last.equals("idz do tylu") == true)
-        {
+		
+		else if (last.equals("idz do tylu") || last.equals("idz wstecz") || last.equals("idz w tyl")
+				|| last.equals("pojdz do tylu") || last.equals("pojdz wstecz") || last.equals("pojdz w tyl")
+				|| last.equals("cofnij sie") || last.equals("wroc sie") || last.equals("zawroc")
+				|| last.equals("wroc") == true)
+		{
 			return 3;
 		}
-        else if (last.equals("idz w lewo") == true)
-        {
+		
+		else if (last.equals("idz w lewo") || last.equals("pojdz w lewo") || last.equals("w lewo") 
+				|| last.equals("lewo") == true)
+		{
 			return 4;
 		}
-        else if (last.equals("idz w prawo") == true)
-        {
+		
+		else if (last.equals("idz w prawo") || last.equals("pojdz w prawo") || last.equals("w prawo") 
+				|| last.equals("prawo") == true)
+		{
 			return 5;
 		}
-        else if (last.equals("pomoc") == true)
-        {
-        	return 6;
-        }
+		
+		else if (last.equals("pomoc") == true)
+		{
+			return 6;
+		}
+		
 		else
 		{
 			return 0;
 		}
 	}
-	
+
 	public String getLast()
 	{
 		return last;
 	}
-	
+
 	public String RemoveAccent(String s)
 	{
+		return s.replace('π', 'a')
 
-	return s.replace('π', 'a')
-	
-	  .replace('Ê', 'c')
-	
-	  .replace('Í', 'e')
-	
-	  .replace('≥', 'l')
-	
-	  .replace('Ò', 'n')
-	
-	  .replace('Û', 'o')
-	
-	  .replace('ú', 's')
-	
-	  .replace('ü', 'z')
-	
-	  .replace('ø', 'z')
-	
-	  .replace('•', 'A')
-	
-	  .replace('∆', 'C')
-	
-	  .replace(' ', 'E')
-	
-	  .replace('£', 'L')
-	
-	  .replace('—', 'N')
-	
-	  .replace('”', 'O')
-	
-	  .replace('å', 'S')
-	
-	  .replace('è', 'Z')
-	
-	  .replace('Ø', 'Z');
+				.replace('Ê', 'c')
+
+				.replace('Í', 'e')
+
+				.replace('≥', 'l')
+
+				.replace('Ò', 'n')
+
+				.replace('Û', 'o')
+
+				.replace('ú', 's')
+
+				.replace('ü', 'z')
+
+				.replace('ø', 'z');
 	}
 }

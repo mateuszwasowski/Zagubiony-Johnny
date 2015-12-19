@@ -37,6 +37,7 @@ public class ZagubionyJohnny extends JFrame
 	JLabel buttonactive;
 	JLabel buttonactive2;
 	JLabel mapa;
+	JLabel straznik;
 
 	JTextField konsola;
 	JTextArea konsola2;
@@ -59,12 +60,17 @@ public class ZagubionyJohnny extends JFrame
 
 		korytarz = new JLabel();
 		johnny = new JLabel();
+		straznik = new JLabel();
 		korytarz.setIcon(new ImageIcon("Mapy/2.png"));
 		korytarz.setBounds(0, 0, 500, 500);
 		johnny.setIcon(new ImageIcon("Johnny/johnnybackhall.png"));
+		straznik.setIcon(new ImageIcon("Johnny/straznik.png"));
+		straznik.setBounds(0, 0, 500, 500);
 		johnny.setBounds(0, 0, 500, 500);
 		getContentPane().add(johnny);
+		getContentPane().add(straznik);
 		getContentPane().add(korytarz);
+		straznik.setVisible(false);
 
 		buttonjohnny = new JLabel();
 		buttonjohnny.setIcon(new ImageIcon("Buttony/buttonjohnny.png"));
@@ -94,6 +100,16 @@ public class ZagubionyJohnny extends JFrame
 		pole.setBounds(497, 0, fieldWidth * 50, fieldHeight * 50);
 		pole.setLayout(new GridLayout(fieldHeight, fieldWidth, 0, 0));
 		fieldButtons = new Room[fieldWidth][fieldHeight];
+
+		Straznik r = new Straznik("czerwony");
+		System.out.println(r.getX());
+		System.out.println(r.getY());
+		Straznik b = new Straznik("niebieski");
+		System.out.println(b.getX());
+		System.out.println(b.getY());
+		Straznik g = new Straznik("zielony");
+		System.out.println(g.getX());
+		System.out.println(g.getY());
 
 		for (int j = 0; j < fieldHeight; j++)
 		{
@@ -161,7 +177,6 @@ public class ZagubionyJohnny extends JFrame
 						if (temp1 != k || temp2 != l)
 						{
 							johnny.setVisible(false);
-
 						}
 
 						if (temp1 == k && temp2 == l)
@@ -169,6 +184,8 @@ public class ZagubionyJohnny extends JFrame
 							johnny.setVisible(true);
 						}
 
+						System.out.println(buttonactive.getX());
+						System.out.println(buttonactive.getY());
 					}
 
 					public void mouseEntered(MouseEvent e)
@@ -253,7 +270,7 @@ public class ZagubionyJohnny extends JFrame
 				{
 					komendy = x.get();
 
-					konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iÅ›Ä‡ dalej?");
+					konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iœæ dalej?");
 
 					if ("north".equals(turn))
 					{
@@ -296,17 +313,18 @@ public class ZagubionyJohnny extends JFrame
 						menu.show();
 						clip.start();
 						dispose();
-					} 
-					
+					}
+
 					else if (a == g1) // sciana na wprost
 					{
 						if (l == 0 || (k == 0 && l == 2) || (k == 0 && l == 4) || (k == 1 && l == 3)
 								|| (k == 2 && l == 1) || (k == 2 && l == 2) || (k == 2 && l == 4) || (k == 3 && l == 4)
 								|| (k == 4 && l == 1) || (k == 4 && l == 2) || (k == 5 && l == 2)
-								|| (k == 5 && l == 4)) {
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ tam iÅ›Ä‡!");
-						} 
-						
+								|| (k == 5 && l == 4))
+						{
+							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+						}
+
 						else
 						{
 							l = l - 1;
@@ -314,17 +332,18 @@ public class ZagubionyJohnny extends JFrame
 							johnny.setIcon(new ImageIcon("Johnny/johnnybackhall.png"));
 							turn = "north";
 						}
-					} 
-					
+					}
+
 					else if (a == g2) // sciana tylna (ta niewidoczna)
 					{
 						if (l == 5 || (k == 0 && l == 0) || (k == 0 && l == 2) || (k == 0 && l == 4)
 								|| (k == 1 && l == 2) || (k == 2 && l == 1) || (k == 2 && l == 3) || (k == 3 && l == 2)
 								|| (k == 3 && l == 4) || (k == 4 && l == 1) || (k == 4 && l == 4) || (k == 5 && l == 1)
-								|| (k == 5 && l == 2) || (k == 5 && l == 4)) {
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ tam iÅ›Ä‡!");
-						} 
-						
+								|| (k == 5 && l == 2) || (k == 5 && l == 4))
+						{
+							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+						}
+
 						else
 						{
 							l = l + 1;
@@ -337,16 +356,17 @@ public class ZagubionyJohnny extends JFrame
 								johnny.setIcon(new ImageIcon("Johnny/johnnyenterhall.png"));
 							}
 						}
-					} 
-					
+					}
+
 					else if (a == g3) // lewa sciana
 					{
 						if (k == 0 || (k == 5 && l == 0) || (k == 1 && l == 1) || (k == 1 && l == 3)
 								|| (k == 1 && l == 5) || (k == 2 && l == 5) || (k == 3 && l == 0) || (k == 3 && l == 1)
-								|| (k == 3 && l == 2) || (k == 4 && l == 3)) {
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ tam iÅ›Ä‡!");
+								|| (k == 3 && l == 2) || (k == 4 && l == 3))
+						{
+							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
 						}
-						
+
 						else
 						{
 							k = k - 1;
@@ -354,16 +374,17 @@ public class ZagubionyJohnny extends JFrame
 							johnny.setIcon(new ImageIcon("Johnny/johnny2.png"));
 							turn = "west";
 						}
-					} 
-					
+					}
+
 					else if (a == g4) // prawa sciana
 					{
 						if (k == 5 || (k == 1 && l == 0) || (k == 1 && l == 5) || (k == 2 && l == 1)
 								|| (k == 2 && l == 2) || (k == 2 && l == 3) || (k == 2 && l == 5) || (k == 3 && l == 0)
-								|| (k == 4 && l == 3)) {
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ tam iÅ›Ä‡!");
+								|| (k == 4 && l == 3))
+						{
+							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
 						}
-						
+
 						else
 						{
 							k = k + 1;
@@ -372,28 +393,31 @@ public class ZagubionyJohnny extends JFrame
 							turn = "east";
 						}
 					}
-					
+
 					else if (a == 0)
 					{
-						konsola2.setText(
-								"Drogi graczu, nie ma takiej komendy!\nWpisz pomoc, Å¼eby wyÅ›wietliÄ‡ dostÄ™pne polecenia");
-					} 
-					
+						konsola2.setText("Drogi graczu, nie ma takiej komendy!\nWpisz 'pomoc', ¿eby wyœwietliæ dostêpne polecenia");
+					}
+
 					else if (a == 6)
 					{
-						konsola2.setText(
-								"Komendy: \n- Idz do przodu     - Idz w prawo\n- Idz do tylu       - Pomoc\n- Idz w lewo        - Wyjscie");
+						konsola2.setText("Komendy: \n- Idz do przodu     - Idz w prawo\n- Idz do tylu       - Pomoc\n- Idz w lewo        - Wyjscie");
+					}
+
+					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
+					{
+						johnny.setVisible(true);
+					}
+
+					else
+					{
+						johnny.setVisible(false);
 					}
 					
-					if (buttonactive.getX() == buttonjohnny.getX()&& buttonactive.getY() == buttonjohnny.getY())
-	            	{
-	            		johnny.setVisible(true);
-	            	}
-					
-	            	else
-	            	{
-	            		johnny.setVisible(false);
-	            	}
+					if (buttonactive.getX() == r.getX() && buttonactive.getY() == r.getY())
+					{
+						straznik.setVisible(true);
+					}
 
 					System.out.println(buttonactive.getBounds());
 					System.out.println(buttonjohnny.getBounds());
@@ -405,8 +429,8 @@ public class ZagubionyJohnny extends JFrame
 					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
 					{
 						johnny.setVisible(true);
-					} 
-					
+					}
+
 					else
 					{
 						johnny.setVisible(false);
@@ -420,8 +444,8 @@ public class ZagubionyJohnny extends JFrame
 					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
 					{
 						johnny.setVisible(true);
-					} 
-					
+					}
+
 					else
 					{
 						johnny.setVisible(false);
@@ -435,8 +459,8 @@ public class ZagubionyJohnny extends JFrame
 					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
 					{
 						johnny.setVisible(true);
-					} 
-					
+					}
+
 					else
 					{
 						johnny.setVisible(false);
@@ -450,8 +474,8 @@ public class ZagubionyJohnny extends JFrame
 					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
 					{
 						johnny.setVisible(true);
-					} 
-					
+					}
+
 					else
 					{
 						johnny.setVisible(false);

@@ -9,18 +9,19 @@ public class Dzwiek
 {
 	static File plik = new File("song.wav");
 	static Clip clip;
-	
+
 	public static void odtworzDzwiek()
 	{
-            try
-            {
-                clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(plik));                   
-                clip.start();
-            } 
-            catch (Exception e)
-            {
-                System.err.println(e.getMessage());
-            }
+		try
+		{
+			clip = AudioSystem.getClip();
+			clip.open(AudioSystem.getAudioInputStream(plik));
+			clip.start();
+		}
+		
+		catch (Exception e)
+		{
+			System.err.println(e.getMessage());
+		}
 	}
 }

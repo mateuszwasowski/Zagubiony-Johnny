@@ -18,7 +18,7 @@ public class ZasadyGry extends JFrame
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setBackground(Color.BLACK);
 		getContentPane().setLayout(null);
-		
+
 		JLabel ZasadyGry = new JLabel("");
 		ZasadyGry.setBounds(0, 0, 870, 710);
 		getContentPane().add(ZasadyGry);

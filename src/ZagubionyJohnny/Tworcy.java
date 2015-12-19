@@ -18,7 +18,7 @@ public class Tworcy extends JFrame
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setBackground(Color.BLACK);
 		getContentPane().setLayout(null);
-			
+
 		JLabel Tworcy = new JLabel("");
 		Tworcy.setBounds(0, 0, 870, 710);
 		getContentPane().add(Tworcy);
