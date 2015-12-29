@@ -37,7 +37,7 @@ public class Komenda
 		
 		else if (last.equals("idz do przodu") || last.equals("idz prosto") || last.equals("idz przed siebie")
 				|| last.equals("idz naprzod") || last.equals("idz w przod") || last.equals("pojdz do przodu")
-				|| last.equals("pojdz prosto") || last.equals("pojdz przed siebie") || last.equals("pojdz naprzod")
+				|| last.equals("pojdz prosto") || last.equals("pojdz przed siebie") || last.equals("pojdz naprzod") || last.equals("prosto")
 				|| last.equals("pojdz w przod") == true)
 		{
 			return 2;
@@ -67,7 +67,10 @@ public class Komenda
 		{
 			return 6;
 		}
-		
+		else if (last.equals("rozmowa") == true)
+		{
+			return 7;
+		}	
 		else
 		{
 			return 0;
