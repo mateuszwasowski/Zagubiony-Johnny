@@ -7,10 +7,10 @@ import javax.sound.sampled.Clip;
 
 public class Dzwiek
 {
-	static File plik = new File("song.wav");
+	static File plik = new File("Muzyka/song.wav");
 	static Clip clip;
 
-	public static void odtworzDzwiek()
+	public static void odtworzDzwiekMenu()
 	{
 		try
 		{

@@ -26,7 +26,7 @@ public class MenuStart extends JFrame
 	{
 		this.gra = gra;
 
-		setIconImage(Toolkit.getDefaultToolkit().getImage("ikonka.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Menu/ikonka.png"));
 		setTitle("Zagubiony Johnny");
 		setSize(800, 800);
 		setLocationRelativeTo(null);
@@ -153,9 +153,9 @@ public class MenuStart extends JFrame
 		});
 
 		JLabel label1 = new JLabel();
-		label1.setIcon(new ImageIcon("tlo.png"));
+		label1.setIcon(new ImageIcon("Menu/tlo.png"));
 		label1.setBounds(0, -50, 800, 800);
 		panel.add(label1);
-		dzwiek.odtworzDzwiek();
+		dzwiek.odtworzDzwiekMenu();
 	}
 }

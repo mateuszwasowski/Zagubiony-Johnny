@@ -63,14 +63,11 @@ public class Komenda
 			return 5;
 		}
 		
-		else if (last.equals("pomoc") == true)
+		else if (last.equals("rozmowa") || last.equals("kto to") || last.equals("kim jestes") || last.equals("czym jestes") == true)
 		{
 			return 6;
-		}
-		else if (last.equals("rozmowa") == true)
-		{
-			return 7;
 		}	
+		
 		else
 		{
 			return 0;

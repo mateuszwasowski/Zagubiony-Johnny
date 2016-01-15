@@ -35,24 +35,23 @@ public class ZagubionyJohnny extends JFrame
 	JLabel johnny;
 	JLabel ekwipunek;
 	JLabel buttonjohnny;
-	JLabel buttonactive;
-	JLabel buttonactive2;
+	JLabel buttonActive;
+	JLabel buttonActive2;
 	JLabel mapa;
-	JLabel r_straznik;
-	JLabel b_straznik;
-	JLabel g_straznik;
+	JLabel straznikRed;
+	JLabel straznikBlue;
+	JLabel straznikGreen;
 
 	JTextField konsola;
 	JTextArea konsola2;
 	JPanel pole;
 
 	String komendy;
-	String komendapusta;
 	String turn = "north";
 
 	public ZagubionyJohnny()
 	{
-		setIconImage(Toolkit.getDefaultToolkit().getImage("ikonka.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Menu/ikonka.png"));
 		setTitle("Zagubiony Johnny");
 		setSize(800, 800);
 		setLocationRelativeTo(null);
@@ -66,46 +65,45 @@ public class ZagubionyJohnny extends JFrame
 		
 		korytarz.setIcon(new ImageIcon("Mapy/2.png"));
 		korytarz.setBounds(0, 0, 500, 500);
-		johnny.setIcon(new ImageIcon("Johnny/johnnybackhall.png"));
+		johnny.setIcon(new ImageIcon("Johnny/johnnyBackHall.png"));
+		
 		//straznicy
-		r_straznik = new JLabel();
-		r_straznik.setIcon(new ImageIcon("Johnny/r_straznik.png"));
-		r_straznik.setBounds(0, 0, 500, 500);
-		r_straznik.setVisible(false);
+		straznikRed = new JLabel();
+		straznikRed.setIcon(new ImageIcon("Straznik/straznikRed.png"));
+		straznikRed.setBounds(0, 0, 500, 500);
+		straznikRed.setVisible(false);
 		
+		straznikBlue = new JLabel();
+		straznikBlue.setIcon(new ImageIcon("Straznik/straznikBlue.png"));
+		straznikBlue.setBounds(0, 0, 500, 500);
+		straznikBlue.setVisible(false);
 		
-		b_straznik = new JLabel();
-		b_straznik.setIcon(new ImageIcon("Johnny/b_straznik.png"));
-		b_straznik.setBounds(0, 0, 500, 500);
-		b_straznik.setVisible(false);
-		
-		g_straznik = new JLabel();
-		g_straznik.setIcon(new ImageIcon("Johnny/g_straznik.png"));
-		g_straznik.setBounds(0, 0, 500, 500);
-		g_straznik.setVisible(false);
+		straznikGreen = new JLabel();
+		straznikGreen.setIcon(new ImageIcon("Straznik/straznikGreen.png"));
+		straznikGreen.setBounds(0, 0, 500, 500);
+		straznikGreen.setVisible(false);
 		
 		johnny.setBounds(0, 0, 500, 500);
 		getContentPane().add(johnny);
-		getContentPane().add(r_straznik);
-		getContentPane().add(b_straznik);
-		getContentPane().add(g_straznik);
+		getContentPane().add(straznikRed);
+		getContentPane().add(straznikBlue);
+		getContentPane().add(straznikGreen);
 		getContentPane().add(korytarz);
 		
-
 		buttonjohnny = new JLabel();
-		buttonjohnny.setIcon(new ImageIcon("Buttony/buttonjohnny.png"));
+		buttonjohnny.setIcon(new ImageIcon("Buttony/buttonJohnny.png"));
 		buttonjohnny.setBounds(m, n, 50, 50);
 		getContentPane().add(buttonjohnny);
 
-		buttonactive = new JLabel();
-		buttonactive.setIcon(new ImageIcon("Buttony/buttonactive.png"));
-		buttonactive.setBounds(497, 0, 50, 50);
-		getContentPane().add(buttonactive);
+		buttonActive = new JLabel();
+		buttonActive.setIcon(new ImageIcon("Buttony/buttonActive.png"));
+		buttonActive.setBounds(497, 0, 50, 50);
+		getContentPane().add(buttonActive);
 
-		buttonactive2 = new JLabel();
-		buttonactive2.setIcon(new ImageIcon("Buttony/buttonactive.png"));
-		buttonactive2.setBounds(497, 0, 50, 50);
-		getContentPane().add(buttonactive2);
+		buttonActive2 = new JLabel();
+		buttonActive2.setIcon(new ImageIcon("Buttony/buttonActive.png"));
+		buttonActive2.setBounds(497, 0, 50, 50);
+		getContentPane().add(buttonActive2);
 
 		mapa = new JLabel();
 		mapa.setIcon(new ImageIcon("Mapy/mapa.png"));
@@ -122,17 +120,8 @@ public class ZagubionyJohnny extends JFrame
 		fieldButtons = new Room[fieldWidth][fieldHeight];
 
 		Straznik r = new Straznik("czerwony");
-		System.out.println("czerwony");
-		System.out.println(r.getX());
-		System.out.println(r.getY());
 		Straznik b = new Straznik("niebieski");
-		System.out.println("niebieski");
-		System.out.println(b.getX());
-		System.out.println(b.getY());
 		Straznik g = new Straznik("zielony");
-		System.out.println("zielony");
-		System.out.println(g.getX());
-		System.out.println(g.getY());
 
 		for (int j = 0; j < fieldHeight; j++)
 		{
@@ -149,18 +138,18 @@ public class ZagubionyJohnny extends JFrame
 					public void mouseClicked(MouseEvent e)
 					{	
 						//resetowanie straznikÛw przy klikniÍciu myszy
-						r_straznik.setVisible(false);
-						b_straznik.setVisible(false);
-						g_straznik.setVisible(false);
+						straznikRed.setVisible(false);
+						straznikBlue.setVisible(false);
+						straznikGreen.setVisible(false);
 						
-						buttonactive.setBounds(497 + (temp1 * 50), temp2 * 50, 50, 50);
+						buttonActive.setBounds(497 + (temp1 * 50), temp2 * 50, 50, 50);
 
 						if ((temp1 == 4 && temp2 == 3) || (temp1 == 3 && temp2 == 4) || (temp1 == 4 && temp2 == 1))
 						{
-							korytarz.setIcon(new ImageIcon("Mapy/hallwayfilter.png"));
+							korytarz.setIcon(new ImageIcon("Mapy/hallWayFilter.png"));
 						}
 
-						if ((temp1 == 1 && temp2 == 5) || (temp1 == 2 && temp2 == 5))
+						if ((temp1 == 1 && temp2 == 5) || (temp1 == 2 && temp2 == 5) || temp1 == 5 && temp2 == 0)
 						{
 							korytarz.setIcon(new ImageIcon("Mapy/1.png"));
 						}
@@ -197,11 +186,11 @@ public class ZagubionyJohnny extends JFrame
 							korytarz.setIcon(new ImageIcon("Mapy/7.png"));
 						}
 
-						if ((temp1 == 3 && temp2 == 0) || (temp1 == 5 && temp2 == 0))
+						if (temp1 == 3 && temp2 == 0)
 						{
 							korytarz.setIcon(new ImageIcon("Mapy/8.png"));
-						}
-
+						}						
+						
 						if (temp1 != k || temp2 != l)
 						{
 							johnny.setVisible(false);
@@ -211,36 +200,37 @@ public class ZagubionyJohnny extends JFrame
 						{
 							johnny.setVisible(true);
 						}
+						
 						//////////////////////////////////////////////////////////////////////////////////
 						//sprawdzamy czy po zmianie kamery znajdujemy siÍ w pomieszczeniu ze straznikiem.
 						
 						if ((497 + (temp1 * 50)) == r.getX() &&  (temp2 * 50) == r.getY())
 						{
-							r_straznik.setVisible(true);
+							straznikRed.setVisible(true);
 						}
 						else if ((497 + (temp1 * 50)) == g.getX() &&  (temp2 * 50) == g.getY())
 						{
-							g_straznik.setVisible(true);
+							straznikGreen.setVisible(true);
 						}
 						else if ((497 + (temp1 * 50)) == b.getX() &&  (temp2 * 50) == b.getY())
 						{
-							b_straznik.setVisible(true);
+							straznikBlue.setVisible(true);
 						}						
 						//////////////////////////////////////////////////////////////////////////////////
 						
 						//debug
-						System.out.println(buttonactive.getX());
-						System.out.println(buttonactive.getY());
+						System.out.println(buttonActive.getX());
+						System.out.println(buttonActive.getY());
 					}
 
 					public void mouseEntered(MouseEvent e)
 					{
-						buttonactive2.setBounds(497 + (temp1 * 50), temp2 * 50, 50, 50);
+						buttonActive2.setBounds(497 + (temp1 * 50), temp2 * 50, 50, 50);
 					}
 
 					public void mouseExited(MouseEvent e)
 					{
-						buttonactive2.setBounds(0, 0, 0, 0);
+						buttonActive2.setBounds(0, 0, 0, 0);
 					}
 				});
 			}
@@ -311,337 +301,309 @@ public class ZagubionyJohnny extends JFrame
 			{
 				Komenda x = new Komenda(konsola);
 				
-				if (rozmowa == 0){
-				if (e.getKeyCode() == KeyEvent.VK_ENTER)
+				if (rozmowa == 0)
 				{
-					komendy = x.get();
-					
-					
-					konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iúÊ dalej?");
-					
-					if ("north".equals(turn))
+					if (e.getKeyCode() == KeyEvent.VK_ENTER)
 					{
-						g1 = 2;
-						g2 = 3;
-						g3 = 4;
-						g4 = 5;
-					}
-
-					if ("south".equals(turn))
-					{
-						g1 = 3;
-						g2 = 2;
-						g3 = 5;
-						g4 = 4;
-					}
-
-					if ("east".equals(turn))
-					{
-						g1 = 4;
-						g2 = 5;
-						g3 = 3;
-						g4 = 2;
-					}
-
-					if ("west".equals(turn))
-					{
-						g1 = 5;
-						g2 = 4;
-						g3 = 2;
-						g4 = 3;
-					}
-
-					int a = x.check();
-
-					if (a == 1) // wyjscie
-					{
-						ZagubionyJohnny gra = new ZagubionyJohnny();
-						MenuStart menu = new MenuStart(gra);
-						menu.show();
-						clip.start();
-						dispose();
-					}
-
-					else if (a == g1) // sciana na wprost
-					{
-						if (l == 0 || (k == 0 && l == 2) || (k == 0 && l == 4) || (k == 1 && l == 3)
-								|| (k == 2 && l == 1) || (k == 2 && l == 2) || (k == 2 && l == 4) || (k == 3 && l == 4)
-								|| (k == 4 && l == 1) || (k == 4 && l == 2) || (k == 5 && l == 2)
-								|| (k == 5 && l == 4))
+						komendy = x.get();
+						
+						konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iúÊ dalej?");
+						
+						if ("north".equals(turn))
 						{
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÍ tam iúÊ!");
+							g1 = 2;
+							g2 = 3;
+							g3 = 4;
+							g4 = 5;
 						}
-
-						else
+	
+						if ("south".equals(turn))
 						{
-							l = l - 1;
-							buttonjohnny.setBounds(m, n = n - 50, 50, 50);
-							johnny.setIcon(new ImageIcon("Johnny/johnnybackhall.png"));
-							turn = "north";
+							g1 = 3;
+							g2 = 2;
+							g3 = 5;
+							g4 = 4;
 						}
-					}
-
-					else if (a == g2) // sciana tylna (ta niewidoczna)
-					{
-						if (l == 5 || (k == 0 && l == 0) || (k == 0 && l == 2) || (k == 0 && l == 4)
-								|| (k == 1 && l == 2) || (k == 2 && l == 1) || (k == 2 && l == 3) || (k == 3 && l == 2)
-								|| (k == 3 && l == 4) || (k == 4 && l == 1) || (k == 4 && l == 4) || (k == 5 && l == 1)
-								|| (k == 5 && l == 2) || (k == 5 && l == 4))
+	
+						if ("east".equals(turn))
 						{
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÍ tam iúÊ!");
+							g1 = 4;
+							g2 = 5;
+							g3 = 3;
+							g4 = 2;
 						}
-
-						else
+	
+						if ("west".equals(turn))
 						{
-							l = l + 1;
-							buttonjohnny.setBounds(m, n = n + 50, 50, 50);
-							johnny.setIcon(new ImageIcon("Johnny/johnny1.png"));
-							turn = "south";
-
-							if ((k == 4 && l == 3))
+							g1 = 5;
+							g2 = 4;
+							g3 = 2;
+							g4 = 3;
+						}
+	
+						int a = x.check();
+	
+						if (a == 1) // wyjscie
+						{
+							ZagubionyJohnny gra = new ZagubionyJohnny();
+							MenuStart menu = new MenuStart(gra);
+							menu.show();
+							clip.start();
+							dispose();
+						}
+	
+						else if (a == g1) // sciana na wprost
+						{
+							if (k == 0 && l == 0 || k == 1 && l == 0 || k == 3 && l ==0 || (k == 0 && l == 2) || (k == 0 && l == 4) || (k == 1 && l == 3)
+									|| (k == 2 && l == 1) || (k == 2 && l == 2) || (k == 2 && l == 4) || (k == 3 && l == 4)
+									|| (k == 4 && l == 1) || (k == 4 && l == 2) || (k == 5 && l == 2)
+									|| (k == 5 && l == 4))
 							{
-								johnny.setIcon(new ImageIcon("Johnny/johnnyenterhall.png"));
+								konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÍ tam iúÊ!");
+							}							
+	
+							else
+							{
+								l = l - 1;
+								buttonjohnny.setBounds(m, n = n - 50, 50, 50);
+								johnny.setIcon(new ImageIcon("Johnny/johnnyBackHall.png"));
+								turn = "north";
+								
+								if (l == -1)
+								{
+									korytarz.setIcon(new ImageIcon("Mapy/wyjszlem.png"));
+									johnny.setVisible(false);
+								}
 							}
 						}
-					}
-
-					else if (a == g3) // lewa sciana
-					{
-						if (k == 0 || (k == 5 && l == 0) || (k == 1 && l == 1) || (k == 1 && l == 3)
-								|| (k == 1 && l == 5) || (k == 2 && l == 5) || (k == 3 && l == 0) || (k == 3 && l == 1)
-								|| (k == 3 && l == 2) || (k == 4 && l == 3))
+	
+						else if (a == g2) // sciana tylna (ta niewidoczna)
 						{
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÍ tam iúÊ!");
+							if (l == 5 || (k == 0 && l == 0) || (k == 0 && l == 2) || (k == 0 && l == 4)
+									|| (k == 1 && l == 2) || (k == 2 && l == 1) || (k == 2 && l == 3) || (k == 3 && l == 2)
+									|| (k == 3 && l == 4) || (k == 4 && l == 1) || (k == 4 && l == 4) || (k == 5 && l == 1)
+									|| (k == 5 && l == 2) || (k == 5 && l == 4))
+							{
+								konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÍ tam iúÊ!");
+							}
+	
+							else
+							{
+								l = l + 1;
+								buttonjohnny.setBounds(m, n = n + 50, 50, 50);
+								johnny.setIcon(new ImageIcon("Johnny/johnny1.png"));
+								turn = "south";
+	
+								if ((k == 4 && l == 3))
+								{
+									johnny.setIcon(new ImageIcon("Johnny/johnnyEnterHall.png"));
+								}
+							}
 						}
-
+	
+						else if (a == g3) // lewa sciana
+						{
+							if (k == 0 || (k == 5 && l == 0) || (k == 1 && l == 1) || (k == 1 && l == 3)
+									|| (k == 1 && l == 5) || (k == 2 && l == 5) || (k == 3 && l == 0) || (k == 3 && l == 1)
+									|| (k == 3 && l == 2) || (k == 4 && l == 3))
+							{
+								konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÍ tam iúÊ!");
+							}
+	
+							else
+							{
+								k = k - 1;
+								buttonjohnny.setBounds(m = m - 50, n, 50, 50);
+								johnny.setIcon(new ImageIcon("Johnny/johnny2.png"));
+								turn = "west";
+							}
+						}
+	
+						else if (a == g4) // prawa sciana
+						{
+							if (k == 5 || (k == 1 && l == 0) || (k == 1 && l == 5) || (k == 2 && l == 1)
+									|| (k == 2 && l == 2) || (k == 2 && l == 3) || (k == 2 && l == 5) || (k == 3 && l == 0)
+									|| (k == 4 && l == 3))
+							{
+								konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÍ tam iúÊ!");
+							}
+	
+							else
+							{
+								k = k + 1;
+								buttonjohnny.setBounds(m = m + 50, n, 50, 50);
+								johnny.setIcon(new ImageIcon("Johnny/johnny3.png"));
+								turn = "east";
+							}
+						}
+	
+						else if (a == 0)
+						{
+							konsola2.setText("Drogi graczu, nie ma takiej komendy!\nAby wyúwietliÊ dostÍpne polecenia otwÛrz plik\n\"komendy.txt\"");
+						}
+	
+						else if (a == 6) //johnny rozmawia ze straznikiem
+						{
+							// sprawdzamy czy johnny znajduje siÍ w tym samym pomieszczeniu co straznik i aktywujemy rozmowÍ
+							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
+							{	
+								rozmowa = 1;
+								konsola2.setText(r.rozmowa(rozmowa));
+								konsola.setEditable(false);
+							}
+							
+							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
+							{
+								rozmowa = 1;
+								konsola2.setText(g.rozmowa(rozmowa));
+								konsola.setEditable(false);
+							}
+							
+							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
+							{	
+								rozmowa = 1;
+								konsola2.setText(b.rozmowa(rozmowa));
+								konsola.setEditable(false);
+							}
+							
+							else
+							{
+								konsola2.setText("Nie ma tu nikogo");
+							}
+							
+						}
+						
+						if (buttonActive.getX() == buttonjohnny.getX() && buttonActive.getY() == buttonjohnny.getY())
+						{
+							johnny.setVisible(true);
+						}
+	
 						else
 						{
-							k = k - 1;
-							buttonjohnny.setBounds(m = m - 50, n, 50, 50);
-							johnny.setIcon(new ImageIcon("Johnny/johnny2.png"));
-							turn = "west";
+							johnny.setVisible(false);
 						}
 					}
-
-					else if (a == g4) // prawa sciana
+	
+					if ((k == 3 && l == 4) && "west".equals(turn))
 					{
-						if (k == 5 || (k == 1 && l == 0) || (k == 1 && l == 5) || (k == 2 && l == 1)
-								|| (k == 2 && l == 2) || (k == 2 && l == 3) || (k == 2 && l == 5) || (k == 3 && l == 0)
-								|| (k == 4 && l == 3))
+						if (buttonActive.getX() == buttonjohnny.getX() && buttonActive.getY() == buttonjohnny.getY())
 						{
-							konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÍ tam iúÊ!");
+							johnny.setVisible(true);
 						}
-
+	
 						else
 						{
-							k = k + 1;
-							buttonjohnny.setBounds(m = m + 50, n, 50, 50);
-							johnny.setIcon(new ImageIcon("Johnny/johnny3.png"));
-							turn = "east";
+							johnny.setVisible(false);
 						}
+	
+						johnny.setIcon(new ImageIcon("Johnny/johnnyEnterHall.png"));
 					}
-
-					else if (a == 0)
+	
+					if ((k == 3 && l == 4) && "east".equals(turn))
 					{
-						konsola2.setText("Drogi graczu, nie ma takiej komendy!\nWpisz 'pomoc', øeby wyúwietliÊ dostÍpne polecenia");
-					}
-
-					else if (a == 6)
-					{
-						konsola2.setText("Komendy: \n- Idz do przodu     - Idz w prawo\n- Idz do tylu       - Pomoc\n- Idz w lewo        - Wyjscie");
-					}
-
-					else if (a == 7) //johnny rozmawia ze straznikiem
-					{
-						// sprawdzamy czy johnny znajduje siÍ w tym samym pomieszczeniu co straznik i aktywujemy rozmowÍ
-						if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
-						{	
-							rozmowa = 1;
-							konsola2.setText(r.rozmowa(rozmowa));
-			
-						}
-						else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
+						if (buttonActive.getX() == buttonjohnny.getX() && buttonActive.getY() == buttonjohnny.getY())
 						{
-							rozmowa = 1;
-							konsola2.setText(g.rozmowa(rozmowa));
+							johnny.setVisible(true);
 						}
-						else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
-						{	
-							rozmowa = 1;
-							konsola2.setText(b.rozmowa(rozmowa));
+	
+						else
+						{
+							johnny.setVisible(false);
 						}
-						else {
-						konsola2.setText("Nie ma tu nikogo");
+	
+						johnny.setIcon(new ImageIcon("Johnny/johnnyBackHall.png"));
+					}
+	
+					if ((k == 4 && l == 1) && "west".equals(turn))
+					{
+						if (buttonActive.getX() == buttonjohnny.getX() && buttonActive.getY() == buttonjohnny.getY())
+						{
+							johnny.setVisible(true);
 						}
+	
+						else
+						{
+							johnny.setVisible(false);
+						}
+	
+						johnny.setIcon(new ImageIcon("Johnny/johnnyEnterHall.png"));
 					}
-					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
+	
+					if ((k == 4 && l == 1) && "east".equals(turn))
 					{
-						johnny.setVisible(true);
+						if (buttonActive.getX() == buttonjohnny.getX() && buttonActive.getY() == buttonjohnny.getY())
+						{
+							johnny.setVisible(true);
+						}
+	
+						else
+						{
+							johnny.setVisible(false);
+						}
+	
+						johnny.setIcon(new ImageIcon("Johnny/johnnyBackHall.png"));
 					}
-
-					else
-					{
-						johnny.setVisible(false);
-					}
-
-					System.out.println(buttonactive.getBounds());
-					System.out.println(buttonjohnny.getBounds());
-					System.out.println(buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY());
-					
 				}
-
-				if ((k == 3 && l == 4) && "west".equals(turn))
-				{
-					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
-					{
-						johnny.setVisible(true);
-					}
-
-					else
-					{
-						johnny.setVisible(false);
-					}
-
-					johnny.setIcon(new ImageIcon("Johnny/johnnyenterhall.png"));
-				}
-
-				if ((k == 3 && l == 4) && "east".equals(turn))
-				{
-					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
-					{
-						johnny.setVisible(true);
-					}
-
-					else
-					{
-						johnny.setVisible(false);
-					}
-
-					johnny.setIcon(new ImageIcon("Johnny/johnnybackhall.png"));
-				}
-
-				if ((k == 4 && l == 1) && "west".equals(turn))
-				{
-					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
-					{
-						johnny.setVisible(true);
-					}
-
-					else
-					{
-						johnny.setVisible(false);
-					}
-
-					johnny.setIcon(new ImageIcon("Johnny/johnnyenterhall.png"));
-				}
-
-				if ((k == 4 && l == 1) && "east".equals(turn))
-				{
-					if (buttonactive.getX() == buttonjohnny.getX() && buttonactive.getY() == buttonjohnny.getY())
-					{
-						johnny.setVisible(true);
-					}
-
-					else
-					{
-						johnny.setVisible(false);
-					}
-
-					johnny.setIcon(new ImageIcon("Johnny/johnnybackhall.png"));
-				}
-				}
+				
 				else //rozmowa true
 				{	
-					//konsola.setVisible(false);
-					if (e.getKeyCode() == KeyEvent.VK_ENTER){
-						if (rozmowa < 5){
+					if (e.getKeyCode() == KeyEvent.VK_ENTER)
+					{
+						if (rozmowa < 5)
+						{
 							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
 							{	
 								rozmowa ++;
-								konsola2.setText(r.rozmowa( rozmowa));
-				
+								konsola2.setText(r.rozmowa(rozmowa));
 							}
+							
 							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
 							{
 								rozmowa ++;
 								konsola2.setText(g.rozmowa(rozmowa));
 							}
+							
 							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
 							{	
 								rozmowa ++;
 								konsola2.setText(b.rozmowa(rozmowa));
 							}
+							
+							if (rozmowa == 5)
+							{
+								konsola.setEditable(true); 
+							}
 						}
-						else if (rozmowa == 5){ // pierwsze pytanie
+						
+						else if (rozmowa == 5) // pierwsze pytanie
+						{
 							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
 							{	
 								rozmowa ++;
-								konsola2.setText(r.rozmowa( rozmowa));
-				
+								konsola2.setText(r.rozmowa(rozmowa));
 							}
+							
 							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
 							{
 								rozmowa ++;
 								konsola2.setText(g.rozmowa(rozmowa));
 							}
+							
 							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
-							{	
-								rozmowa ++;
-								konsola2.setText(b.rozmowa(rozmowa));
-							}
-							//zrÛb rozmowa ++ jak on odpowie
-						}
-						else if (rozmowa == 6){ // drugie pytanie
-							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
-							{	
-								rozmowa ++;
-								konsola2.setText(r.rozmowa( rozmowa));
-				
-							}
-							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
 							{
-								rozmowa ++;
-								konsola2.setText(g.rozmowa(rozmowa));
-							}
-							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
-							{	
-								rozmowa ++;
-								konsola2.setText(b.rozmowa(rozmowa));
-							}
-							//zrÛb rozmowa ++ jak on odpowie
-						}
-						else if (rozmowa == 7){ // trzecie pytanie
-							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
-							{	
-								rozmowa ++;
-								konsola2.setText(r.rozmowa( rozmowa));
-				
-							}
-							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
-							{
-								rozmowa ++;
-								konsola2.setText(g.rozmowa(rozmowa));
-							}
-							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
-							{	
 								rozmowa ++;
 								konsola2.setText(b.rozmowa(rozmowa));
 							}
 							//zrÛb rozmowa ++ jak on odpowie
 						}
 						
-						
-						if (rozmowa > 7){
-							//konsola.setVisible(true);
+						if (rozmowa > 5)
+						{
 							rozmowa = 0;
-							konsola2.setText("Johnny: Mam klucz, zaprowadü mnie do drzwi!");
+							konsola2.setText("Johnny: Przyjacielu, mam klucz, zaprowadü mnie do\ndrzwi!");
 						}
-						
-						System.out.println("Rozmowa:");
-						System.out.println(rozmowa);
 					}
-					
-			}
+				}
 			}
 		});
 

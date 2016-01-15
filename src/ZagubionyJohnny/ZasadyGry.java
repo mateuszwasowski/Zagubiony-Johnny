@@ -1,5 +1,6 @@
 package ZagubionyJohnny;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -10,17 +11,18 @@ public class ZasadyGry extends JFrame
 {
 	public ZasadyGry()
 	{
-		setIconImage(Toolkit.getDefaultToolkit().getImage("ikonka.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("Menu/ikonka.png"));
 		setTitle("Zasady gry");
-		setSize(870, 750);
+		setSize(800, 800);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setBackground(Color.BLACK);
 		getContentPane().setLayout(null);
 
-		JLabel ZasadyGry = new JLabel("");
-		ZasadyGry.setBounds(0, 0, 870, 710);
+		JLabel ZasadyGry = new JLabel();
+		ZasadyGry.setIcon(new ImageIcon("Menu/zasady.png"));
+		ZasadyGry.setBounds(0, 0, 800, 800);
 		getContentPane().add(ZasadyGry);
 	}
 }
