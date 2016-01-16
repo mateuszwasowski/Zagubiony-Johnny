@@ -41,6 +41,10 @@ public class ZagubionyJohnny extends JFrame
 	JLabel straznikRed;
 	JLabel straznikBlue;
 	JLabel straznikGreen;
+	boolean kluczRed = false;
+	boolean kluczBlue = false;
+	boolean kluczGreen = false;
+	
 
 	JTextField konsola;
 	JTextArea konsola2;
@@ -308,6 +312,8 @@ public class ZagubionyJohnny extends JFrame
 						komendy = x.get();
 						
 						konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iúÊ dalej?");
+						System.out.println("K: "+ k);
+						System.out.println("L: "+ l);
 						
 						if ("north".equals(turn))
 						{
@@ -447,23 +453,60 @@ public class ZagubionyJohnny extends JFrame
 							// sprawdzamy czy johnny znajduje siÍ w tym samym pomieszczeniu co straznik i aktywujemy rozmowÍ
 							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
 							{	
-								rozmowa = 1;
-								konsola2.setText(r.rozmowa(rozmowa));
-								konsola.setEditable(false);
+								if (r.finished()){
+									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mÛwi. Normalnie skamienia≥!");
+									rozmowa = 0;
+								}
+								else{
+									rozmowa = 1;
+									konsola2.setText(r.rozmowa(rozmowa));
+									if (r.getStarted()== true){
+										rozmowa = 5;
+									}
+									else{
+										konsola.setEditable(false);
+									}
+								}
+								
+								
 							}
 							
 							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
-							{
-								rozmowa = 1;
-								konsola2.setText(g.rozmowa(rozmowa));
-								konsola.setEditable(false);
+							{	
+								if (g.finished()){
+									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mÛwi. Normalnie skamienia≥!");
+									rozmowa = 0;
+								}
+								else{
+									rozmowa = 1;
+									konsola2.setText(g.rozmowa(rozmowa));
+									if (g.getStarted()== true){
+										rozmowa = 5;
+									}
+									else{
+										konsola.setEditable(false);
+									}
+								}
+								
 							}
 							
 							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
 							{	
-								rozmowa = 1;
-								konsola2.setText(b.rozmowa(rozmowa));
-								konsola.setEditable(false);
+								if (b.finished()){
+									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mÛwi. Normalnie skamienia≥!");
+									rozmowa = 0;
+								}
+								else{
+									rozmowa = 1;
+									konsola2.setText(b.rozmowa(rozmowa));
+									if (b.getStarted()== true){
+										rozmowa = 5;
+									}
+									else{
+										konsola.setEditable(false);
+									}
+								}
+								
 							}
 							
 							else
@@ -553,40 +596,70 @@ public class ZagubionyJohnny extends JFrame
 						{
 							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
 							{	
-								rozmowa ++;
-								konsola2.setText(r.rozmowa(rozmowa));
+									rozmowa ++;
+									konsola2.setText(r.rozmowa(rozmowa));
+
 							}
 							
 							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
-							{
-								rozmowa ++;
-								konsola2.setText(g.rozmowa(rozmowa));
+							{	
+							
+									rozmowa ++;
+									konsola2.setText(g.rozmowa(rozmowa));
+								
 							}
 							
 							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
 							{	
+							
 								rozmowa ++;
 								konsola2.setText(b.rozmowa(rozmowa));
+								
 							}
 							
 							if (rozmowa == 5)
 							{
 								konsola.setEditable(true); 
+								
+								if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
+								{	
+									
+									r.setStarted();
+								}
+								
+								else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
+								{
+									g.setStarted();
+								}
+								
+								else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
+								{	
+									b.setStarted();
+								}
+				
 							}
 						}
 						
-						else if (rozmowa == 5) // pierwsze pytanie
-						{
+						else if (rozmowa == 5) // pytanie
+						{	
+
+				
 							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
 							{	
+								
+								komendy = x.get();
 								rozmowa ++;
 								konsola2.setText(r.rozmowa(rozmowa));
+								r.odpowiedz(komendy);
+								
+								
 							}
 							
 							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
 							{
 								rozmowa ++;
 								konsola2.setText(g.rozmowa(rozmowa));
+								
 							}
 							
 							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
@@ -594,13 +667,57 @@ public class ZagubionyJohnny extends JFrame
 								rozmowa ++;
 								konsola2.setText(b.rozmowa(rozmowa));
 							}
-							//zrÛb rozmowa ++ jak on odpowie
+							
+						
+						
 						}
 						
 						if (rozmowa > 5)
 						{
+							if (buttonjohnny.getX() == r.getX() &&  buttonjohnny.getY() == r.getY())
+							{	
+								
+									if (r.success()){
+										konsola2.setText("Straznik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadü mnie do\nczerwonych drzwi!");
+										r.setDone();
+										kluczRed = true;
+									}
+									else{
+										konsola2.setText("Straønik: Cokolwiek powiedzia≥eú, to na pewno nie by≥a ta odpowiedü na ktÛrπ czekam! Przemyúl to\ni przyjdü jeszcze raz!");
+									}
+								
+								
+							}
+							
+							else if (buttonjohnny.getX() == g.getX() &&  buttonjohnny.getY() == g.getY())
+							{
+								if (g.success()){
+									g.setDone();
+									kluczGreen = true;
+									konsola2.setText("Straznik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadü mnie do\nzielonych drzwi!");
+								}
+								else{
+									konsola2.setText("Straønik: Cokolwiek powiedzia≥eú, to na pewno nie by≥a ta odpowiedü na ktÛrπ czekam! Przemyúl to\ni przyjdü jeszcze raz!");
+								}
+								
+								
+							}
+							
+							else if (buttonjohnny.getX() == b.getX() &&  buttonjohnny.getY() == b.getY())
+							{
+								if (b.success()){
+									b.setDone();
+									kluczBlue = true;
+									konsola2.setText("Straznik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadü mnie do\nniebieskich drzwi!");
+								}
+								else{
+									konsola2.setText("Straønik: Cokolwiek powiedzia≥eú, to na pewno nie by≥a ta odpowiedü na ktÛrπ czekam! Przemyúl to\ni przyjdü jeszcze raz!");
+								}
+								
+								
+							}
 							rozmowa = 0;
-							konsola2.setText("Johnny: Przyjacielu, mam klucz, zaprowadü mnie do\ndrzwi!");
+							
 						}
 					}
 				}
