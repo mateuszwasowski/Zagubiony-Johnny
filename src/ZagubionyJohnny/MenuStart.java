@@ -75,6 +75,7 @@ public class MenuStart extends JFrame
 				dispose();
 				gra.show();
 				clip.stop();
+				dzwiek.odtworzDzwiekGra();
 			}
 		});
 

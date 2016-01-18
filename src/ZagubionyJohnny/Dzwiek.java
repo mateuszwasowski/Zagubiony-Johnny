@@ -7,8 +7,12 @@ import javax.sound.sampled.Clip;
 
 public class Dzwiek
 {
-	static File plik = new File("Muzyka/song.wav");
+	static File plik = new File("Muzyka/startSong.wav");
+	static File plik2 = new File("Muzyka/song.wav");
+	static File plik3 = new File("Muzyka/finalSong.wav");
 	static Clip clip;
+	static Clip clip2;
+	static Clip clip3;
 
 	public static void odtworzDzwiekMenu()
 	{
@@ -17,6 +21,37 @@ public class Dzwiek
 			clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(plik));
 			clip.start();
+		}
+		
+		catch (Exception e)
+		{
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	public static void odtworzDzwiekGra()
+	{
+		try
+		{
+			clip2 = AudioSystem.getClip();
+			clip2.open(AudioSystem.getAudioInputStream(plik2));
+			clip2.loop(clip2.LOOP_CONTINUOUSLY);
+			clip2.start();
+		}
+		
+		catch (Exception e)
+		{
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	public static void odtworzDzwiekExit()
+	{
+		try
+		{
+			clip3 = AudioSystem.getClip();
+			clip3.open(AudioSystem.getAudioInputStream(plik3));
+			clip3.start();
 		}
 		
 		catch (Exception e)

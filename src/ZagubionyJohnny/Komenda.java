@@ -63,7 +63,8 @@ public class Komenda
 			return 5;
 		}
 		
-		else if (last.equals("rozmowa") || last.equals("kto to") || last.equals("kim jestes") || last.equals("czym jestes") == true)
+		else if (last.equals("rozmowa") || last.equals("kto to") || last.equals("co to") || last.equals("kim jestes") || last.equals("czym jestes") 
+				|| last.equals("straznik") || last.equals("witaj") == true)
 		{
 			return 6;
 		}	
