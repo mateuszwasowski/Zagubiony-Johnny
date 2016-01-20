@@ -1,5 +1,7 @@
 package ZagubionyJohnny;
 
+import java.util.Random;
+
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -58,6 +60,8 @@ public class ZagubionyJohnny extends JFrame
 	String komendy;
 	String turn = "north";
 
+        Random randomGenerator = new Random();                
+        
 	public ZagubionyJohnny()
 	{
 		setIconImage(Toolkit.getDefaultToolkit().getImage("Menu/ikonka.png"));
@@ -152,7 +156,7 @@ public class ZagubionyJohnny extends JFrame
 				{
 					public void mouseClicked(MouseEvent e)
 					{
-						// resetowanie stra¿ników przy klikniêciu myszy
+						// resetowanie straÅ¼nikÃ³w przy klikniÄ™ciu myszy
 						straznikRed.setVisible(false);
 						straznikBlue.setVisible(false);
 						straznikGreen.setVisible(false);
@@ -326,9 +330,18 @@ public class ZagubionyJohnny extends JFrame
 					if (e.getKeyCode() == KeyEvent.VK_ENTER)
 					{
 						komendy = x.get();
-
-						konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iœæ dalej?");
-						
+                                                
+                                                int randomInt = randomGenerator.nextInt(3);
+                                                //numer losowej odpowiedzi
+                                                System.out.println(randomInt);
+                                                
+                                                if (randomInt == 0)
+						konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Okej, jestem. Gdzie mam iÅ›Ä‡ dalej?");
+						if (randomInt == 1)
+						konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: JuÅ¼ jestem. Gdzie teraz?");
+                                                if (randomInt == 2)
+						konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Dobra, dotarÅ‚em. Co dalej?");
+                                                
 						System.out.println("K: " + k);
 						System.out.println("L: " + l);
 
@@ -364,8 +377,8 @@ public class ZagubionyJohnny extends JFrame
 							g4 = 3;
 						}
 
-						int a = x.check();
-
+						int a = x.check();                                                                                                
+                                                
 						if (a == 1) // wyjscie
 						{
 							ZagubionyJohnny gra = new ZagubionyJohnny();
@@ -384,14 +397,24 @@ public class ZagubionyJohnny extends JFrame
 									|| (k == 4 && l == 1) || (k == 4 && l == 2) || (k == 5 && l == 2)
 									|| (k == 5 && l == 4))
 							{
-								konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+                                                            if (randomInt == 0)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ tam iÅ›Ä‡!");
+                                                            if (randomInt == 1)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Tam nie ma drzwi!");    
+                                                            if (randomInt == 2)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie przeniknÄ™ przez Å›cianÄ™!");
 							}
 
 							else 
 							{
 								if (k == 5 && l - 1 == 0 && kluczGreen == false)
 								{
-									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Drzwi s¹ zamkniête!");
+                                                                    if (randomInt == 0)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Drzwi sÄ… zamkniÄ™te!");
+                                                                    if (randomInt == 1)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ otworzyÄ‡ tych drzwi!");
+                                                                    if (randomInt == 2)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: KtoÅ› zamknÄ…Å‚ drzwi na klucz!");
 								} 
 								
 								else
@@ -450,7 +473,12 @@ public class ZagubionyJohnny extends JFrame
 									|| (k == 4 && l == 4) || (k == 5 && l == 1) || (k == 5 && l == 2)
 									|| (k == 5 && l == 4))
 							{
-								konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+                                                            if (randomInt == 0)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ tam iÅ›Ä‡!");
+                                                            if (randomInt == 1)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Tam nie ma drzwi!");    
+                                                            if (randomInt == 2)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie przeniknÄ™ przez Å›cianÄ™!");
 							}
 
 							else
@@ -473,7 +501,12 @@ public class ZagubionyJohnny extends JFrame
 									|| (k == 1 && l == 5) || (k == 2 && l == 5) || (k == 3 && l == 0)
 									|| (k == 3 && l == 1) || (k == 3 && l == 2) || (k == 4 && l == 3))
 							{
-								konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+                                                            if (randomInt == 0)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ tam iÅ›Ä‡!");
+                                                            if (randomInt == 1)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Tam nie ma drzwi!");    
+                                                            if (randomInt == 2)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie przeniknÄ™ przez Å›cianÄ™!");
 							}
 
 							else
@@ -491,19 +524,34 @@ public class ZagubionyJohnny extends JFrame
 									|| (k == 2 && l == 2) || (k == 2 && l == 3) || (k == 2 && l == 5)
 									|| (k == 3 && l == 0) || (k == 4 && l == 3))
 							{
-								konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogê tam iœæ!");
+                                                            if (randomInt == 0)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ tam iÅ›Ä‡!");
+                                                            if (randomInt == 1)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Tam nie ma drzwi!");    
+                                                            if (randomInt == 2)
+                                                            konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie przeniknÄ™ przez Å›cianÄ™!");
 							}
 
 							else
 							{
 								if (k + 1 == 2 && l == 2 && kluczRed == false)
 								{
-									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Drzwi s¹ zamkniête!");
+                                                                    if (randomInt == 0)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Drzwi sÄ… zamkniÄ™te!");
+                                                                    if (randomInt == 1)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ otworzyÄ‡ tych drzwi!");
+                                                                    if (randomInt == 2)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: KtoÅ› zamknÄ…Å‚ drzwi na klucz!");
 								} 
 								
 								else if (k + 1 == 3 && l == 4 && kluczBlue == false)
 								{
-									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Drzwi s¹ zamkniête!");
+                                                                    if (randomInt == 0)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Drzwi sÄ… zamkniÄ™te!");
+                                                                    if (randomInt == 1)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nie mogÄ™ otworzyÄ‡ tych drzwi!");
+                                                                    if (randomInt == 2)
+                                                                    konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: KtoÅ› zamknÄ…Å‚ drzwi na klucz!");
 								} 
 								
 								else
@@ -518,7 +566,7 @@ public class ZagubionyJohnny extends JFrame
 
 						else if (a == 0)
 						{
-							konsola2.setText("Drogi graczu, nie ma takiej komendy!\nAby wyœwietliæ dostêpne polecenia otwórz plik\n\"komendy.txt\"");
+							konsola2.setText("Drogi graczu, nie ma takiej komendy!\nAby wyÅ›wietliÄ‡ dostÄ™pne polecenia otwÃ³rz plik\n\"komendy.txt\"");
 						}
 
 						else if (a == 6) // johnny rozmawia ze straznikiem
@@ -529,7 +577,7 @@ public class ZagubionyJohnny extends JFrame
 							{
 								if (r.finished())
 								{
-									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mówi. Normalnie skamienia³!");
+									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mÃ³wi. Normalnie skamieniaÅ‚!");
 									rozmowa = 0;
 								} 
 								
@@ -554,7 +602,7 @@ public class ZagubionyJohnny extends JFrame
 							{
 								if (g.finished())
 								{
-									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mówi. Normalnie skamienia³!");
+									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mÃ³wi. Normalnie skamieniaÅ‚!");
 									rozmowa = 0;
 								}
 								
@@ -579,7 +627,7 @@ public class ZagubionyJohnny extends JFrame
 							{
 								if (b.finished())
 								{
-									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mówi. Normalnie skamienia³!");
+									konsola2.setText("Hacker: Johnny, " + komendy + "\nJohnny: Nic nie mÃ³wi. Normalnie skamieniaÅ‚!");
 									rozmowa = 0;
 								}
 								
@@ -756,7 +804,7 @@ public class ZagubionyJohnny extends JFrame
 							{
 								if (r.success())
 								{
-									konsola2.setText("Stra¿nik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadŸ mnie do\nczerwonych drzwi!");
+									konsola2.setText("StraÅ¼nik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadÅº mnie do\nczerwonych drzwi!");
 									r.setDone();
 									kluczRed = true;
 									ekwipunek.setIcon(new ImageIcon("Eq/ekwipunek1.png"));
@@ -764,7 +812,7 @@ public class ZagubionyJohnny extends JFrame
 								
 								else
 								{
-									konsola2.setText("Stra¿nik: Cokolwiek powiedzia³eœ, to na pewno nie by³a ta odpowiedŸ na któr¹ czekam! Przemyœl to\ni przyjdŸ jeszcze raz!");
+									konsola2.setText("StraÅ¼nik: Cokolwiek powiedziaÅ‚eÅ›, to na pewno nie byÅ‚a ta odpowiedÅº na ktÃ³rÄ… czekam! PrzemyÅ›l to\ni przyjdÅº jeszcze raz!");
 								}
 							}
 
@@ -772,7 +820,7 @@ public class ZagubionyJohnny extends JFrame
 							{
 								if (g.success())
 								{
-									konsola2.setText("Stra¿nik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadŸ mnie do\nzielonych drzwi!");
+									konsola2.setText("StraÅ¼nik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadÅº mnie do\nzielonych drzwi!");
 									g.setDone();
 									kluczGreen = true;
 									ekwipunek.setIcon(new ImageIcon("Eq/ekwipunek3.png"));
@@ -780,7 +828,7 @@ public class ZagubionyJohnny extends JFrame
 							
 								else
 								{
-									konsola2.setText("Stra¿nik: Cokolwiek powiedzia³eœ, to na pewno nie by³a ta odpowiedŸ na któr¹ czekam! Przemyœl to\ni przyjdŸ jeszcze raz!");
+									konsola2.setText("StraÅ¼nik: Cokolwiek powiedziaÅ‚eÅ›, to na pewno nie byÅ‚a ta odpowiedÅº na ktÃ³rÄ… czekam! PrzemyÅ›l to\ni przyjdÅº jeszcze raz!");
 								}
 							}
 
@@ -788,7 +836,7 @@ public class ZagubionyJohnny extends JFrame
 							{
 								if (b.success())
 								{
-									konsola2.setText("Stra¿nik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadŸ mnie do\nniebieskich drzwi!");
+									konsola2.setText("StraÅ¼nik: TAK, to jest to!!\nJohnny: Przyjacielu, mam klucz, zaprowadÅº mnie do\nniebieskich drzwi!");
 									b.setDone();
 									kluczBlue = true;
 									ekwipunek.setIcon(new ImageIcon("Eq/ekwipunek2.png"));
@@ -796,7 +844,7 @@ public class ZagubionyJohnny extends JFrame
 							
 								else
 								{
-									konsola2.setText("Stra¿nik: Cokolwiek powiedzia³eœ, to na pewno nie by³a ta odpowiedŸ na któr¹ czekam! Przemyœl to\ni przyjdŸ jeszcze raz!");
+									konsola2.setText("StraÅ¼nik: Cokolwiek powiedziaÅ‚eÅ›, to na pewno nie byÅ‚a ta odpowiedÅº na ktÃ³rÄ… czekam! PrzemyÅ›l to\ni przyjdÅº jeszcze raz!");
 								}
 							}
 							
