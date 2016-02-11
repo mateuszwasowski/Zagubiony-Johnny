@@ -52,6 +52,7 @@ public class MenuStart extends JFrame
 		Icon wyjscieHover = new ImageIcon("Buttony/wyjscieHover.png");
 		JButton Wyjscie = new JButton(wyjscie);
 
+		// NOWA GRA
 		NowaGra.setBounds(275, 415, 250, 50);
 		panel.add(NowaGra);
 		NowaGra.setBorder(BorderFactory.createEmptyBorder());
@@ -79,6 +80,7 @@ public class MenuStart extends JFrame
 			}
 		});
 
+		// ZASADY
 		Zasady.setBounds(275, 475, 250, 50);
 		panel.add(Zasady);
 		Zasady.setBorder(BorderFactory.createEmptyBorder());
@@ -104,6 +106,7 @@ public class MenuStart extends JFrame
 			}
 		});
 
+		// TWÓRCY
 		Tworcy.setBounds(275, 535, 250, 50);
 		panel.add(Tworcy);
 		Tworcy.setBorder(BorderFactory.createEmptyBorder());
@@ -129,6 +132,7 @@ public class MenuStart extends JFrame
 			}
 		});
 
+		// WYJŒCIE
 		Wyjscie.setBounds(275, 595, 250, 50);
 		panel.add(Wyjscie);
 		Wyjscie.setBorder(BorderFactory.createEmptyBorder());
@@ -153,6 +157,7 @@ public class MenuStart extends JFrame
 			}
 		});
 
+		// T£O
 		JLabel label1 = new JLabel();
 		label1.setIcon(new ImageIcon("Menu/tlo.png"));
 		label1.setBounds(0, -50, 800, 800);

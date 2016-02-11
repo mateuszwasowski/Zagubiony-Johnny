@@ -1,0 +1,51 @@
+﻿Dostępne komendy w grze:
+
+1. Pójście Johnnym do przodu:
+
+	- idź do przodu/pójdź do przodu
+	- idź naprzód/pójdź naprzód
+	- idź w przód/pójdź w przód
+	- idź prosto/pójdź prosto
+	- idź przed siebie/pójdź przed siebie
+	- prosto/do przodu/naprzód/w przód
+
+2. Cofanie bohatera:
+
+	- idź do tyłu/pójdź do tyłu
+	- idź w tył/pójdź w tył
+	- idź wstecz/pójdź wstecz
+	- cofnij się/cofnij/wstecz
+	- wróć się/wróć/zawróć
+	- w tył/do tyłu
+
+3. Pójście w lewo:
+
+	- idź w lewo/pójdź w lewo/skręć w lewo
+	- w lewo/lewo
+
+4. Pójscie w prawo:
+
+	- idź w prawo/pójdź w prawo/skręć w prawo
+	- w prawo/prawo
+
+5. Rozmowa ze strażnikiem:
+
+	- kto to/co to
+	- kto to jest/co to jest
+	- kim jesteś/czym jesteś
+	- rozmowa/strażnik
+	- witaj/cześć/hej
+
+6. Luźne pytania w stronę Hackera:
+
+	- co tam/co słychać/jak się masz/co u Ciebie
+	- jaka pogoda
+	- która godzina/która jest godzina/która na osi
+
+7. Aby zakończyć grę:
+
+	- wyjście/wychodzę/wyjdź/exit/zakończ grę/koniec
+	- menu główne/menu
+	- nie chce mi się
+
+* Można również obrazić naszego przyjaciela używając takich poleceń jak: frajer/debil/świnia/pajac
